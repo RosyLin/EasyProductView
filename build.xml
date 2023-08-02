@@ -1,0 +1,29 @@
+<project basedir="." name="EasyProductView-Wrapper" default="build">
+
+   <property name="enterprise.release" value="AIM_enterprise" />
+
+   <property name="pmd.sincedate" value="21-Oct-2016" />
+   
+   <property name="test.cobertura.skip.failure" value="true"/>
+
+  <target name="build-application-init" depends="" >
+
+    <filelist dir="." id="application.build.files" >
+       <file name="EasyProductViewEAR/build.xml" />
+    </filelist>
+
+    <propertyset id="subant.properties">
+      <propertyref name="enterprise.release"/>
+      <propertyref prefix="pmd" />
+      <propertyref prefix="cc" />
+      <propertyref prefix="test" />
+    </propertyset>
+
+  </target>
+
+  <!-- ###############################################################################################
+       ##                               Load the ancestor scripts                                   ##
+       ############################################################################################### -->
+       <import file="${dir.ancestor.home}/llb-wrapper-ancestor.xml" />
+
+</project>
